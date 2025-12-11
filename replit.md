@@ -6,6 +6,15 @@ This is a 3D web-based cooking simulator game built for gamod.cloud. The applica
 
 ## Recent Changes
 
+### Phase 2: Interactive Mini-Games Enhancement (Completed)
+- **ChoppingGame**: Swipe detection, cut quality scoring (perfect/good/poor), visual cut guides, combo system with multipliers, timer display, particle effects, and feedback messages
+- **StirringGame**: Circular motion tracking with trail visualization, consistency meter, speed detection, splash/flour particles, rhythm bonuses, and color transitions
+- **HeatControlGame**: Detailed stove model with rotatable knobs, flame particle system, smoke/steam effects, temperature gauges, and food state transitions (raw/cooking/cooked/burnt)
+- **MeasuringGame**: Tiltable containers, liquid flow particles, precision meter with accuracy scoring, slow-motion mode, spill detection, and combo system
+- **PlatingGame**: Drag-and-drop food placement, rotation controls, garnish library, sauce drizzle tool, symmetry checking, and arrangement scoring
+- **New Recipes**: Added 6 new recipes (Chocolate Cake, Gourmet Steak, Sushi Platter, Tiramisu, Chocolate Chip Cookies) utilizing all 5 mini-games
+- **Store Updates**: Extended MiniGameType union to include 'measuring' and 'plating', added camera presets for new mini-games
+
 ### Phase 1: Foundation & Core Mechanics (Completed)
 - **Project Setup**: Added Google Fonts (Poppins, Inter, Playfair Display), cooking-themed color palette (#FF6B35, #F7931E, #C1666B, #FFF8F0)
 - **Kitchen Environment**: 10m x 8m dimensions, walls with backsplash, countertops with drawer handles, sink with faucets, window frame, pot rack with hanging cookware
@@ -36,8 +45,8 @@ The game uses three Zustand stores:
 
 ### 3D Scene Structure
 - Kitchen components: Stove, Refrigerator, CuttingBoard, Countertops, Lighting
-- Interactive mini-games: ChoppingGame, StirringGame, HeatControlGame
-- Camera system with presets for different cooking stations
+- Interactive mini-games: ChoppingGame, StirringGame, HeatControlGame, MeasuringGame, PlatingGame
+- Camera system with presets for different cooking stations and mini-games
 
 ### Backend Architecture
 - **Express.js**: REST API server with logging middleware
