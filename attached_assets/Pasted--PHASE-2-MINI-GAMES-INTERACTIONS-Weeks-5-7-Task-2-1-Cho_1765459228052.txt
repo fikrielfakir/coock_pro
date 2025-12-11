@@ -1,0 +1,121 @@
+🎮 PHASE 2: MINI-GAMES & INTERACTIONS (Weeks 5-7)
+Task 2.1: Chopping Mini-Game
+•	Details: 
+o	Design 3D cutting board model (40cm x 30cm wooden board with texture)
+o	Create 3D knife model with realistic blade geometry and handle
+o	Implement knife physics: follows cursor/touch with smooth dampening
+o	Build swipe detection system: track mouse/finger movement speed and direction
+o	Create slice plane calculation: determine cut location and angle based on swipe
+o	Implement ingredient splitting algorithm: divide 3D mesh into two pieces along slice plane
+o	Add realistic physics to cut pieces: apply force based on swipe speed, add rotation, enable gravity
+o	Create particle system for vegetable debris: small pieces fly off during cut
+o	Add juice splatter effect using billboard particles with fade-out
+o	Implement cut quality scoring: perfect (center cut), good (slight off-center), poor (edge cut)
+o	Create visual guide overlay showing optimal cut locations
+o	Add progressive difficulty: start with soft vegetables (tomato), progress to harder items (carrot, meat)
+o	Build combo system: consecutive perfect cuts increase score multiplier
+o	Implement time limit system with countdown timer (60-120 seconds)
+o	Create target cut counter: complete recipe requires specific number of cuts
+o	Add haptic feedback for mobile devices on each successful cut
+o	Design sound effects: knife swoosh, cutting board impact, vegetable crunch (3 variations each)
+o	Implement different cutting techniques: dice, julienne, chop (different scoring)
+o	Create tutorial overlay explaining controls and objectives
+o	Build scoring algorithm considering: accuracy, speed, technique, consistency
+o	Display real-time feedback: "Perfect Cut!", "Nice!", "Try Again"
+o	Test on various ingredient types and adjust difficulty curves
+Task 2.2: Stirring & Mixing Mini-Game
+•	Details: 
+o	Model 3D bowls in 3 sizes: small (15cm), medium (25cm), large (35cm)
+o	Create mixing tools: wooden spoon, whisk, spatula (each with unique properties)
+o	Implement circular motion tracking: detect cursor/finger path and calculate circularity score
+o	Build path visualization system: show trail behind spoon for 2 seconds with fade effect
+o	Create fluid simulation for bowl contents: use vertex displacement shaders for swirling effect
+o	Implement ingredient blending system: gradually mix colors and textures over time
+o	Add consistency meter: visual indicator showing mixing progress (0-100%)
+o	Create speed detection: too slow = lumps remain, too fast = splashing
+o	Implement splashing mechanic: particles escape bowl if stirring too vigorously
+o	Build flour cloud effect: particles rise when mixing dry ingredients
+o	Add viscosity simulation: thick batter resists stirring more than liquids
+o	Create audio feedback: stirring sounds change pitch/intensity with speed
+o	Implement perfect mixing zone: maintain optimal speed for bonus points
+o	Add rhythm-based scoring: maintain consistent circular motion
+o	Create different mixing patterns: clockwise, counterclockwise, figure-eight
+o	Build color blending shader: realistically mix ingredient colors (e.g., egg yellow + flour white = pale yellow)
+o	Implement texture transformation: see batter smooth out as lumps disappear
+o	Add ingredient incorporation system: watch chocolate chips or nuts blend in
+o	Create fatigue system: stirring speed slightly decreases over time (can be countered by maintaining rhythm)
+o	Design success criteria: reach target consistency within time limit
+o	Test various ingredient combinations and mixing scenarios
+Task 2.3: Heat & Temperature Control Mini-Game
+•	Details: 
+o	Model detailed 3D stove with 4 individual burners and control knobs
+o	Create rotatable knob controls: click and drag to adjust heat (OFF → LOW → MEDIUM → HIGH)
+o	Build flame particle system: dynamic fire with size/intensity tied to heat setting
+o	Implement realistic flame colors: blue (low), blue-orange (medium), bright orange (high)
+o	Create heat transfer simulation: burner → cookware → food
+o	Model pans and pots with heat visualization: red glow on bottom increases with temperature
+o	Build temperature tracking system: each ingredient has current temperature (°C)
+o	Implement temperature rise/fall curves: realistic heating/cooling rates
+o	Create visual feedback for food states: raw → cooking → cooked → burnt
+o	Add smoke particle system: light steam (low heat), moderate smoke (high heat), black smoke (burnt)
+o	Implement sizzling sound effects with dynamic intensity based on temperature
+o	Create oil shimmer effect: animated normal maps when oil is hot
+o	Build temperature gauge UI: analog dial or digital readout showing current temp
+o	Add target temperature indicator: visual marker showing ideal cooking temp
+o	Implement temperature danger zones: too low (undercooked), too high (burning)
+o	Create color change system for cooking meat: red → pink → brown → black
+o	Add vegetable cooking states: bright color → softening → caramelization → burnt
+o	Build timer system: cooking duration affects outcome alongside temperature
+o	Implement multi-ingredient scenarios: cook multiple items simultaneously with different heat needs
+o	Create achievement system: perfect temperature control, no burning streaks
+o	Add emergency controls: quickly remove pan from heat to prevent burning
+o	Design visual warning system: flashing indicators when burning imminent
+o	Test various cooking scenarios: searing steak, sautéing vegetables, boiling water
+Task 2.4: Measuring & Pouring Mini-Game
+•	Details: 
+o	Model 3D measuring cups: 1/4 cup, 1/3 cup, 1/2 cup, 1 cup (with measurement markings)
+o	Create measuring spoons: teaspoon, tablespoon (detailed models)
+o	Build tiltable container system: mouse/touch controls rotation angle of ingredient source
+o	Implement liquid flow particle system: realistic stream of liquid pouring
+o	Create liquid level rise animation: smoothly fill measuring cup with accurate volume
+o	Build precision meter UI: color-coded accuracy indicator (red = overfill, yellow = close, green = perfect)
+o	Add slow-motion effect: automatically trigger when near target volume for precise control
+o	Implement dry ingredient physics: powder particles pour differently than liquids
+o	Create sticky liquid system: honey or syrup flows slower than water
+o	Build volume calculation: track exact amount poured in real-time
+o	Add overfill penalty: deduct points if exceeding target measurement
+o	Implement spillage system: liquid spills on counter if pouring too fast or missing cup
+o	Create cleanup mechanic: quick time event to wipe up spills
+o	Design different container types: bottles, cartons, bags (each pours differently)
+o	Build measurement conversion helper: display metric and imperial simultaneously
+o	Add visual guides: transparent target fill line appears in measuring cup
+o	Implement progressive difficulty: start with large measurements, progress to precise 1/8 teaspoon
+o	Create combo system: consecutive perfect measurements increase score
+o	Add ingredient-specific challenges: sticky ingredients, foaming liquids, powders
+o	Design sound effects: pouring liquid, powder sliding, container tipping
+o	Test various ingredient types and measurement scenarios
+Task 2.5: Plating & Presentation Mini-Game
+•	Details: 
+o	Model 5 plate types: round dinner plate, square plate, rectangular platter, bowl, slate board
+o	Create drag-and-drop system for cooked food items from ingredient panel to plate
+o	Implement rotation control: twist gesture or dial to rotate food items
+o	Build stacking system: layer ingredients vertically (collision detection prevents unrealistic stacking)
+o	Create garnish library: fresh herbs (basil, parsley, cilantro), edible flowers, microgreens, lemon wedges
+o	Implement sauce drizzle tool: draw patterns with sauce bottles
+o	Build arrangement scoring algorithm evaluating: balance, color distribution, height variation, negative space usage
+o	Create reference image system: optional guide showing professional plating example
+o	Implement symmetry analysis: reward balanced asymmetrical or symmetrical arrangements
+o	Add color theory scoring: complementary colors score higher
+o	Create focal point detection: main protein should be prominent
+o	Build height scoring: adds visual interest (use small stands or stacking)
+o	Implement sauce artistry mini-game: create dots, lines, spirals with squeeze bottles
+o	Add plate rim cleaning mechanic: wipe away smudges for presentation bonus
+o	Create lighting adjustment controls: change light angle and intensity for photography
+o	Build depth-of-field control: blur background to emphasize dish
+o	Implement filter system: warm, cool, vibrant, black-and-white options
+o	Create photo capture mode: freeze scene and take high-resolution screenshot
+o	Add social sharing functionality: export image with game watermark
+o	Build gallery system: save and view past plated dishes
+o	Create celebrity chef judging system: simulate feedback on presentation
+o	Design plating achievements: minimalist master, color coordinator, height champion
+o	Test various food combinations and plating styles
