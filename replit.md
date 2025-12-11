@@ -4,6 +4,16 @@
 
 This is a 3D web-based cooking simulator game built for gamod.cloud. The application features an immersive kitchen environment using Three.js with React Three Fiber, where players complete recipes through interactive mini-games like chopping, stirring, and heat control. The game uses a state machine pattern to manage game phases (menu, recipe selection, cooking, mini-games, and completion).
 
+## Recent Changes
+
+### Phase 1: Foundation & Core Mechanics (Completed)
+- **Project Setup**: Added Google Fonts (Poppins, Inter, Playfair Display), cooking-themed color palette (#FF6B35, #F7931E, #C1666B, #FFF8F0)
+- **Kitchen Environment**: 10m x 8m dimensions, walls with backsplash, countertops with drawer handles, sink with faucets, window frame, pot rack with hanging cookware
+- **Camera System**: 7 presets (wide, closeup, firstperson, overhead, side, stove, cutting), smooth lerp transitions, camera shake function
+- **Ingredient Models**: 15 types (tomato, onion, carrot, bell_pepper, lettuce, chicken, beef, egg, milk, cheese, butter, bread, rice, oil, water) with 4 cooking states each (raw, cooking, cooked, burnt)
+- **Storage System**: localStorage with auto-save (30s), data validation, versioning, backup slots, export/import functionality (`client/src/lib/storage.ts`)
+- **UI Framework**: Toast notification system (`client/src/components/ui/cooking-toast.tsx`), Framer Motion animations, responsive cooking-themed components
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

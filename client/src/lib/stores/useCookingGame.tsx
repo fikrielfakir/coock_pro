@@ -50,7 +50,7 @@ interface CookingGameState {
   choppingScore: number;
   timeRemaining: number;
   isPaused: boolean;
-  cameraPreset: "wide" | "closeup" | "firstperson" | "stove" | "cutting";
+  cameraPreset: "wide" | "closeup" | "firstperson" | "overhead" | "side" | "stove" | "cutting";
 
   setPhase: (phase: GamePhase) => void;
   selectRecipe: (recipe: Recipe) => void;
@@ -63,14 +63,14 @@ interface CookingGameState {
   setMixingProgress: (progress: number) => void;
   addChoppingScore: (score: number) => void;
   updateIngredient: (id: string, updates: Partial<IngredientState>) => void;
-  setCameraPreset: (preset: "wide" | "closeup" | "firstperson" | "stove" | "cutting") => void;
+  setCameraPreset: (preset: "wide" | "closeup" | "firstperson" | "overhead" | "side" | "stove" | "cutting") => void;
   togglePause: () => void;
   completeRecipe: () => void;
   resetGame: () => void;
   goToRecipeSelect: () => void;
 }
 
-function getCameraPresetForMiniGame(miniGame: MiniGameType): "wide" | "closeup" | "firstperson" | "stove" | "cutting" {
+function getCameraPresetForMiniGame(miniGame: MiniGameType): "wide" | "closeup" | "firstperson" | "overhead" | "side" | "stove" | "cutting" {
   if (miniGame === "chopping") return "cutting";
   if (miniGame === "heat_control") return "stove";
   if (miniGame === "stirring") return "closeup";

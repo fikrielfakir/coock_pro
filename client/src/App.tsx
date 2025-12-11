@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Game } from "./game/Game";
 import { useAudio } from "./lib/stores/useAudio";
-import "@fontsource/inter";
+import { ToastContainer } from "./components/ui/cooking-toast";
+import { loadGameData, startAutoSave } from "./lib/storage";
 
 function App() {
   const setBackgroundMusic = useAudio(state => state.setBackgroundMusic);
@@ -27,9 +28,17 @@ function App() {
     };
   }, [setBackgroundMusic, setHitSound, setSuccessSound]);
 
+  useEffect(() => {
+    const saveData = loadGameData();
+    console.log("[App] Loaded game data:", saveData.profile.name);
+    
+    startAutoSave(() => loadGameData());
+  }, []);
+
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
       <Game />
+      <ToastContainer />
     </div>
   );
 }
