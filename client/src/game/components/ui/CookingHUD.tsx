@@ -9,6 +9,7 @@ import {
   Pause, Play, X, ChefHat, Clock, Lightbulb, 
   CheckCircle2, Circle, ArrowRight, Timer
 } from "lucide-react";
+import { GraphicsSettings } from "./GraphicsSettings";
 
 export function CookingHUD() {
   const currentRecipe = useCookingGame(state => state.currentRecipe);
@@ -276,6 +277,10 @@ export function CookingHUD() {
           </Card>
         </div>
       )}
+      
+      <div className="pointer-events-auto">
+        <GraphicsSettings />
+      </div>
     </div>
   );
 }

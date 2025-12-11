@@ -6,6 +6,13 @@ This is a 3D web-based cooking simulator game built for gamod.cloud. The applica
 
 ## Recent Changes
 
+### Phase 4: Advanced Graphics & Polish (Completed - December 11, 2025)
+- **Advanced Lighting System (Task 4.1)**: HDR environment maps, time-of-day lighting (morning/noon/afternoon/evening), dynamic burner lights tied to temperature, spot lights for cutting areas, shadow quality settings (low/medium/high), light color temperature system
+- **Post-Processing Effects (Task 4.2)**: Bloom for hot surfaces, SMAA anti-aliasing, ACES filmic tone mapping, depth of field, vignette, chromatic aberration, film grain, graphics quality presets (low/medium/high/ultra), settings UI
+- **PBR Materials & Textures (Task 4.3)**: Stainless steel, copper, cast iron cookware materials, marble/granite countertops, glass with transmission, food materials with cooking state variations (raw/cooking/cooked/burnt), wet/dry vegetable materials, liquid/oil materials
+- **Particle Systems (Task 4.4)**: Steam, fire, smoke, bubble particles, sparkle effects for achievements, chopping debris, confetti, instanced mesh rendering for performance, LOD based on quality settings
+- **Animation System (Task 4.5)**: Spring physics, easing functions (linear/quad/cubic/elastic/bounce/back), tween animations, animation sequences, floating/pulse/rotate/shake components, door/drawer/knob animation hooks, score popup animations
+
 ### Phase 3: Comprehensive Recipe & Progression System (Completed)
 - **Recipe Data Schema (Task 3.1)**: Extended FullRecipe type with 30+ fields (nutrition facts, timing, allergens, equipment, cuisine, health tags, unlock requirements, rewards). Created 15 comprehensive recipes across all categories.
 - **Recipe Book UI (Task 3.2)**: Enhanced RecipeSelect with advanced filtering (category, dietary, difficulty, time, cuisine), search functionality, sorting options, favorites, locked recipe display with coin purchase buttons, and detailed recipe modal with nutrition facts.
@@ -46,15 +53,20 @@ Preferred communication style: Simple, everyday language.
 - **Vite**: Build tool with hot module replacement, GLSL shader support, and asset handling for 3D models and audio
 
 ### State Management Pattern
-The game uses three Zustand stores:
+The game uses four Zustand stores:
 - `useCookingGame`: Core game logic (phases, recipes, scores, mini-game states)
 - `useAudio`: Sound management (background music, sound effects, mute state)
 - `useGame`: Simple ready/playing/ended phase tracking
+- `useGraphicsSettings`: Graphics quality and post-processing settings (persisted)
 
 ### 3D Scene Structure
-- Kitchen components: Stove, Refrigerator, CuttingBoard, Countertops, Lighting
+- Kitchen components: Stove, Refrigerator, CuttingBoard, Countertops, AdvancedLighting
 - Interactive mini-games: ChoppingGame, StirringGame, HeatControlGame, MeasuringGame, PlatingGame
 - Camera system with presets for different cooking stations and mini-games
+- Post-processing pipeline: Bloom, DOF, Vignette, Tone Mapping, SMAA
+- Particle systems: Steam, Fire, Smoke, Bubbles, Sparkles, Confetti, Debris
+- PBR materials: Metallic cookware, marble/granite, wood, glass, food states
+- Animation utilities: Spring physics, easing functions, tween/sequence systems
 
 ### Backend Architecture
 - **Express.js**: REST API server with logging middleware

@@ -1,0 +1,124 @@
+🎨 PHASE 4: ADVANCED GRAPHICS & POLISH (Weeks 11-13)
+Task 4.1: Advanced Lighting System
+•	Duration: 5 days
+•	Details: 
+o	Enhance ambient light with HDR environment map for realistic global illumination
+o	Create directional light system simulating natural window light: dynamic intensity based on time of day (morning: warm 0.7, noon: bright 1.0, evening: soft 0.5)
+o	Implement multiple point lights for appliances: refrigerator interior (cool white), oven interior (warm orange), under-cabinet task lighting
+o	Add dynamic spot lights: focused beam on cutting board area, adjustable angle and intensity
+o	Create stove burner lights: 4 point lights with intensity tied to heat setting (OFF = 0, LOW = 0.3, MEDIUM = 0.6, HIGH = 1.0)
+o	Implement light color temperature system: warm (2700K) for ambient, neutral (4000K) for task lights, hot (6500K) for daylight
+o	Build dynamic shadow system: real-time shadows from all major light sources
+o	Add soft shadow penumbra: realistic shadow blending using PCF (Percentage Closer Filtering)
+o	Implement shadow bias adjustment: prevent shadow acne and peter-panning
+o	Create light helpers for development: visualize light positions and ranges
+o	Add volumetric lighting rays: god rays through window (subtle effect)
+o	Implement light flickering for candles and fire: randomized intensity variation
+o	Create light animation system: smooth transitions when switching kitchen areas
+o	Add light contribution optimization: limit active lights to 8 per scene
+o	Build light culling: disable off-screen lights to improve performance
+o	Implement shadow map resolution scaling: higher quality for nearby objects
+o	Create light probes for baked ambient occlusion in static areas
+o	Add rim lighting on food items: edge highlights for appetizing appearance
+o	Test lighting across different graphics quality settings
+Task 4.2: Post-Processing Effects
+•	Duration: 4 days
+•	Details: 
+o	Implement bloom effect using UnrealBloomPass: glow on hot surfaces, stove flames, light fixtures
+o	Configure bloom parameters: threshold (0.85), strength (0.5), radius (0.8)
+o	Add selective bloom: only glowing objects receive effect
+o	Create SSAO (Screen Space Ambient Occlusion) pass: enhance depth perception with subtle contact shadows
+o	Configure SSAO parameters: radius (16), intensity (0.3), samples (32)
+o	Implement tone mapping: ACES filmic curve for realistic HDR to LDR conversion
+o	Add color grading LUT (Look-Up Table): warm, appetizing color palette
+o	Create custom food-optimized grading: enhance reds (meats), greens (vegetables), browns (baked goods)
+o	Implement vignette effect: subtle darkening at screen edges (intensity 0.2)
+o	Add chromatic aberration: minimal lens distortion for realism (offset 0.002)
+o	Create depth of field effect: blur background, focus on active cooking area
+o	Implement bokeh DOF: hexagonal blur for out-of-focus light sources
+o	Add motion blur for fast movements: knife chops, stirring actions (subtle, 0.3 intensity)
+o	Create film grain overlay: add texture to image (intensity 0.05)
+o	Implement anti-aliasing: SMAA or FXAA for smooth edges
+o	Add sharpening pass: enhance detail clarity (intensity 0.2)
+o	Create performance-based quality scaling: adjust effect quality based on FPS
+o	Build graphics preset system: Low (no effects), Medium (bloom + SSAO), High (all effects), Ultra (maximum quality)
+o	Implement effect toggle UI: user control over individual effects
+o	Test performance impact of each effect and optimize
+Task 4.3: PBR Materials & Textures
+•	Duration: 6 days
+•	Details: 
+o	Create metallic material system for cookware: high metalness (0.9), low roughness (0.1), strong reflections
+o	Build stainless steel shader: anisotropic reflections with subtle brushed pattern
+o	Design copper material: warm metallic color with tarnish variation
+o	Create cast iron material: dark metal with rough texture
+o	Implement marble countertop material: realistic veining, slight translucency, polished surface (roughness 0.2)
+o	Build granite material: speckled pattern, medium roughness (0.4)
+o	Create wood materials for cutting boards and cabinets: visible grain, medium roughness (0.6), anisotropic reflections along grain
+o	Design matte surfaces for plates and pottery: low metalness (0), high roughness (0.8)
+o	Implement glass materials for containers: high transmission, low roughness, accurate refractions
+o	Create plastic materials for storage containers: slightly glossy, varied colors
+o	Build fabric materials for towels and oven mitts: high roughness, normal map detail
+o	Implement food-specific materials: subsurface scattering for vegetables (tomatoes, peppers), wet surface shader for freshly washed produce, oil sheen for cooked foods, matte finish for baked goods
+o	Create dynamic food state materials: raw meat (red, glossy), cooked meat (brown, matte), burnt (black, carbon texture)
+o	Add weathering and wear to materials: scratches on counters, worn spots on cutting boards, tarnish on utensils
+o	Implement texture atlases to reduce draw calls: combine multiple textures into single large texture
+o	Create normal maps for surface detail without geometry: wood grain, metal scratches, fabric weave
+o	Build roughness variation maps: non-uniform surface properties
+o	Add ambient occlusion maps: pre-baked contact shadows for static objects
+o	Implement texture compression: use ASTC or DXT formats for smaller file sizes
+o	Create mipmaps for all textures: smooth LOD transitions and improved performance
+o	Test material appearance under different lighting conditions
+Task 4.4: Particle Systems & Visual Effects
+•	Duration: 5 days
+•	Details: 
+o	Create steam particle system: rising from hot food, dissipates as it rises, white wisps with alpha fade
+o	Configure steam parameters: spawn rate (50 particles/sec), lifetime (3 seconds), velocity (0.5 m/s upward), size (0.2-0.5m), turbulence noise
+o	Build fire particle system for stove burners: animated flame sprites, flickering intensity, orange-yellow gradient, upward velocity with slight randomness
+o	Implement smoke particles: gray to black gradient, larger than steam, slower movement, for burnt food or high heat
+o	Create bubble particles for boiling water: spherical, rise to surface, pop animation at water line
+o	Build sizzle particles: small sparks near hot pan edges, rapid spawn and decay
+o	Implement chopping debris particles: vegetable pieces fly outward, rotate during flight, settle on cutting board
+o	Create splash particles for liquid pouring: droplets arc outward, affected by gravity
+o	Build flour cloud particles: white powder puffs, slow floating, gradual dispersion
+o	Implement sparkle particles for achievements and successes: golden stars, outward burst pattern, twinkle effect
+o	Create confetti particles for level-ups and perfect recipes: colorful paper pieces, tumbling rotation, rainbow colors
+o	Build oil shimmer effect: heat distortion shader near hot pans
+o	Implement glow particles for ingredient quality: green for organic, gold for premium
+o	Create caramelization effect: browning animation with amber particles
+o	Build melting effect for butter and cheese: deformation + liquid pool
+o	Implement juice splatter: liquid impact on cutting board, spreads in pattern
+o	Create herb garnish sprinkle: leaves fall in realistic arc with rotation
+o	Build sauce drizzle effect: viscous liquid with trail renderer
+o	Implement object pooling for particles: reuse particle instances for performance
+o	Add particle LOD system: reduce particle count when far from camera or FPS drops
+o	Create GPU-based particle simulation for better performance
+o	Test particle systems with multiple simultaneous effects
+Task 4.5: Animation System
+•	Duration: 4 days
+•	Details: 
+o	Create ingredient transformation animations: whole vegetable → chopped pieces (mesh morphing)
+o	Build cooking state animations: raw → cooked with texture crossfade (2-3 second blend)
+o	Implement stirring animation: spoon rotation with fluid swirl following
+o	Create door opening animations for refrigerator and oven: 90-degree swing with smooth easing
+o	Build knob rotation animations for stove controls: 270-degree range from OFF to HIGH
+o	Implement drawer slide animations: smooth in/out movement with slight bounce
+o	Create cabinet door swing: hinge-based rotation
+o	Build tool pickup animations: utensils float to cursor position with gentle rotation
+o	Implement ingredient placement: smooth lerp from inventory to cooking surface
+o	Create plate rotation animation for plating mini-game: 360-degree spin with momentum
+o	Build score popup animations: numbers scale in with bounce, float upward, fade out
+o	Implement
+Continuer
+13:50
+achievement badge animations: slide in from side, pulse effect, settle in position
+•	Create level-up animation sequence: screen flash, character glow, title change with particle burst
+•	Build recipe card flip animation: 3D rotation revealing recipe details
+•	Implement UI hover animations: scale increase (1.05x), shadow expansion, color shift
+•	Create button press animations: scale down, return to normal with slight overshoot
+•	Build loading animations: rotating cooking utensil, filling measuring cup
+•	Implement transition animations between screens: crossfade, slide, wipe effects
+•	Create skeleton loader animations: pulsing placeholder elements
+•	Add spring physics to animations: natural movement with overshoot and damping
+•	Build animation timeline system: coordinate complex multi-element sequences
+•	Implement animation queuing: sequence multiple animations smoothly
+•	Test animation timing and easing curves for natural feel

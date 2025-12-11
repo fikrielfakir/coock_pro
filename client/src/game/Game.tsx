@@ -2,7 +2,8 @@ import { Suspense, useCallback, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useCookingGame } from "@/lib/stores/useCookingGame";
 import { Kitchen } from "./components/Kitchen";
-import { Lighting } from "./components/Lighting";
+import { AdvancedLighting } from "./components/AdvancedLighting";
+import { PostProcessing } from "./components/PostProcessing";
 import { CameraController } from "./components/CameraController";
 import { ChoppingGame } from "./components/minigames/ChoppingGame";
 import { StirringGame } from "./components/minigames/StirringGame";
@@ -13,6 +14,7 @@ import { MainMenu } from "./components/ui/MainMenu";
 import { RecipeSelect } from "./components/ui/RecipeSelect";
 import { CookingHUD } from "./components/ui/CookingHUD";
 import { RecipeComplete } from "./components/ui/RecipeComplete";
+import { KitchenParticles } from "./components/KitchenParticles";
 
 export function Game() {
   const phase = useCookingGame(state => state.phase);
@@ -48,14 +50,18 @@ export function Game() {
             }}
             gl={{
               antialias: true,
-              powerPreference: "default"
+              powerPreference: "high-performance",
+              alpha: false,
+              stencil: false,
             }}
+            dpr={[1, 2]}
           >
             <color attach="background" args={["#f5f0e8"]} />
             
             <Suspense fallback={null}>
-              <Lighting />
+              <AdvancedLighting />
               <Kitchen />
+              <KitchenParticles />
               <CameraController />
               
               {currentMiniGame === "chopping" && (
@@ -73,6 +79,8 @@ export function Game() {
               {currentMiniGame === "plating" && (
                 <PlatingGame onComplete={handleMiniGameComplete} />
               )}
+              
+              <PostProcessing />
             </Suspense>
           </Canvas>
           
