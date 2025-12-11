@@ -6,6 +6,14 @@ This is a 3D web-based cooking simulator game built for gamod.cloud. The applica
 
 ## Recent Changes
 
+### Phase 3: Comprehensive Recipe & Progression System (Completed)
+- **Recipe Data Schema (Task 3.1)**: Extended FullRecipe type with 30+ fields (nutrition facts, timing, allergens, equipment, cuisine, health tags, unlock requirements, rewards). Created 15 comprehensive recipes across all categories.
+- **Recipe Book UI (Task 3.2)**: Enhanced RecipeSelect with advanced filtering (category, dietary, difficulty, time, cuisine), search functionality, sorting options, favorites, locked recipe display with coin purchase buttons, and detailed recipe modal with nutrition facts.
+- **Step-by-Step Guidance (Task 3.3)**: Enhanced CookingHUD with progress bar, real-time timer, tool requirements display, step progress sidebar, tips/hints system, and technique information.
+- **Scoring System (Task 3.4)**: Score calculation utility with weighted components, star rating conversion based on percentage thresholds, streak bonuses, first-time completion bonus.
+- **XP & Leveling (Task 3.5)**: useProgression store with 50-level progression using exponential XP formula, chef titles progression (Line Cook to Legendary Chef), level milestones with rewards, streak tracking, coin system with spending/earning, recipe unlock purchases, and LevelUpNotification component for celebrations.
+- **Integration**: Progression store persists via zustand middleware, properly wired unlock logic gating recipes by level and coin cost, RecipeWithUnlock type for proper type safety.
+
 ### Phase 2: Interactive Mini-Games Enhancement (Completed)
 - **ChoppingGame**: Swipe detection, cut quality scoring (perfect/good/poor), visual cut guides, combo system with multipliers, timer display, particle effects, and feedback messages
 - **StirringGame**: Circular motion tracking with trail visualization, consistency meter, speed detection, splash/flour particles, rhythm bonuses, and color transitions
