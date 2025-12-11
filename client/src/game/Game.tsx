@@ -7,6 +7,8 @@ import { CameraController } from "./components/CameraController";
 import { ChoppingGame } from "./components/minigames/ChoppingGame";
 import { StirringGame } from "./components/minigames/StirringGame";
 import { HeatControlGame } from "./components/minigames/HeatControlGame";
+import { MeasuringGame } from "./components/minigames/MeasuringGame";
+import { PlatingGame } from "./components/minigames/PlatingGame";
 import { MainMenu } from "./components/ui/MainMenu";
 import { RecipeSelect } from "./components/ui/RecipeSelect";
 import { CookingHUD } from "./components/ui/CookingHUD";
@@ -64,6 +66,12 @@ export function Game() {
               )}
               {currentMiniGame === "heat_control" && (
                 <HeatControlGame onComplete={handleMiniGameComplete} />
+              )}
+              {currentMiniGame === "measuring" && (
+                <MeasuringGame onComplete={handleMiniGameComplete} />
+              )}
+              {currentMiniGame === "plating" && (
+                <PlatingGame onComplete={handleMiniGameComplete} />
               )}
             </Suspense>
           </Canvas>

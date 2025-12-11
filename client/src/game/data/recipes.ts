@@ -348,6 +348,251 @@ export const recipes: Recipe[] = [
     ],
     unlocked: true,
     bestStars: 0
+  },
+  {
+    id: "chocolate_cake",
+    name: "Chocolate Cake",
+    category: "dessert",
+    difficulty: "medium",
+    ingredients: ["Flour", "Cocoa Powder", "Eggs", "Sugar", "Butter", "Milk"],
+    steps: [
+      {
+        id: 1,
+        action: "prep",
+        title: "Measure Ingredients",
+        instruction: "Carefully measure flour, sugar, and cocoa powder",
+        miniGame: "measuring",
+        duration: 45,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 2,
+        action: "prep",
+        title: "Mix Batter",
+        instruction: "Combine all ingredients until smooth",
+        miniGame: "stirring",
+        duration: 40,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 3,
+        action: "cook",
+        title: "Bake Cake",
+        instruction: "Bake at 350°F until a toothpick comes out clean",
+        miniGame: "heat_control",
+        duration: 50,
+        completed: false,
+        score: 0
+      }
+    ],
+    unlocked: true,
+    bestStars: 0
+  },
+  {
+    id: "gourmet_steak",
+    name: "Gourmet Steak Dinner",
+    category: "dinner",
+    difficulty: "hard",
+    ingredients: ["Ribeye Steak", "Asparagus", "Mashed Potato", "Red Wine Sauce", "Herbs"],
+    steps: [
+      {
+        id: 1,
+        action: "prep",
+        title: "Prep Asparagus",
+        instruction: "Trim and chop the asparagus",
+        miniGame: "chopping",
+        duration: 30,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 2,
+        action: "prep",
+        title: "Make Sauce",
+        instruction: "Measure and combine sauce ingredients",
+        miniGame: "measuring",
+        duration: 40,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 3,
+        action: "cook",
+        title: "Sear Steak",
+        instruction: "Sear steak to perfect medium-rare",
+        miniGame: "heat_control",
+        duration: 45,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 4,
+        action: "cook",
+        title: "Make Mash",
+        instruction: "Whip potatoes until creamy and smooth",
+        miniGame: "stirring",
+        duration: 35,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 5,
+        action: "plate",
+        title: "Plate Dish",
+        instruction: "Arrange the steak, vegetables, and sauce beautifully",
+        miniGame: "plating",
+        duration: 60,
+        completed: false,
+        score: 0
+      }
+    ],
+    unlocked: true,
+    bestStars: 0
+  },
+  {
+    id: "sushi_platter",
+    name: "Sushi Platter",
+    category: "dinner",
+    difficulty: "hard",
+    ingredients: ["Sushi Rice", "Salmon", "Tuna", "Avocado", "Nori", "Wasabi"],
+    steps: [
+      {
+        id: 1,
+        action: "prep",
+        title: "Slice Fish",
+        instruction: "Cut salmon and tuna into precise slices",
+        miniGame: "chopping",
+        duration: 45,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 2,
+        action: "prep",
+        title: "Season Rice",
+        instruction: "Measure and add rice vinegar to rice",
+        miniGame: "measuring",
+        duration: 35,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 3,
+        action: "prep",
+        title: "Mix Rice",
+        instruction: "Gently fold the seasoning into the rice",
+        miniGame: "stirring",
+        duration: 30,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 4,
+        action: "plate",
+        title: "Present Platter",
+        instruction: "Arrange sushi pieces artfully on the plate",
+        miniGame: "plating",
+        duration: 70,
+        completed: false,
+        score: 0
+      }
+    ],
+    unlocked: true,
+    bestStars: 0
+  },
+  {
+    id: "tiramisu",
+    name: "Classic Tiramisu",
+    category: "dessert",
+    difficulty: "hard",
+    ingredients: ["Mascarpone", "Espresso", "Ladyfingers", "Cocoa", "Eggs", "Sugar"],
+    steps: [
+      {
+        id: 1,
+        action: "prep",
+        title: "Measure Ingredients",
+        instruction: "Measure mascarpone, sugar, and espresso precisely",
+        miniGame: "measuring",
+        duration: 40,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 2,
+        action: "prep",
+        title: "Whip Cream",
+        instruction: "Beat eggs and sugar until light and fluffy",
+        miniGame: "stirring",
+        duration: 45,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 3,
+        action: "prep",
+        title: "Fold Mixture",
+        instruction: "Gently fold mascarpone into the egg mixture",
+        miniGame: "stirring",
+        duration: 35,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 4,
+        action: "plate",
+        title: "Assemble & Present",
+        instruction: "Layer and decorate the tiramisu beautifully",
+        miniGame: "plating",
+        duration: 50,
+        completed: false,
+        score: 0
+      }
+    ],
+    unlocked: true,
+    bestStars: 0
+  },
+  {
+    id: "cookies",
+    name: "Chocolate Chip Cookies",
+    category: "dessert",
+    difficulty: "easy",
+    ingredients: ["Flour", "Butter", "Sugar", "Eggs", "Chocolate Chips", "Vanilla"],
+    steps: [
+      {
+        id: 1,
+        action: "prep",
+        title: "Measure Dry Ingredients",
+        instruction: "Measure flour and sugar carefully",
+        miniGame: "measuring",
+        duration: 35,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 2,
+        action: "prep",
+        title: "Mix Dough",
+        instruction: "Cream butter and sugar, then add eggs and flour",
+        miniGame: "stirring",
+        duration: 40,
+        completed: false,
+        score: 0
+      },
+      {
+        id: 3,
+        action: "cook",
+        title: "Bake Cookies",
+        instruction: "Bake until golden brown around edges",
+        miniGame: "heat_control",
+        duration: 45,
+        completed: false,
+        score: 0
+      }
+    ],
+    unlocked: true,
+    bestStars: 0
   }
 ];
 

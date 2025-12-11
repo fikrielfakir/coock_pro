@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 
 export type GamePhase = "menu" | "recipe_select" | "cooking" | "mini_game" | "recipe_complete";
-export type MiniGameType = "chopping" | "stirring" | "heat_control" | null;
+export type MiniGameType = "chopping" | "stirring" | "heat_control" | "measuring" | "plating" | null;
 
 export interface IngredientState {
   id: string;
@@ -74,6 +74,8 @@ function getCameraPresetForMiniGame(miniGame: MiniGameType): "wide" | "closeup" 
   if (miniGame === "chopping") return "cutting";
   if (miniGame === "heat_control") return "stove";
   if (miniGame === "stirring") return "closeup";
+  if (miniGame === "measuring") return "closeup";
+  if (miniGame === "plating") return "overhead";
   return "wide";
 }
 
