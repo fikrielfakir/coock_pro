@@ -1,0 +1,1492 @@
+Create a highly immersive, 3D web-based cooking simulator game for gamod.cloud using Three.js with advanced graphics, realistic physics, and engaging gameplay mechanics.
+
+1. CORE 3D GRAPHICS ENGINE
+Three.js Implementation
+Scene Setup:
+
+Initialize Three.js scene with WebGL renderer
+Implement realistic lighting system:
+
+Ambient light for overall illumination
+Directional light simulating kitchen windows/overhead lighting
+Point lights for stove burners (dynamic intensity based on heat)
+Spot lights for focused task lighting
+HDR environment mapping for realistic reflections
+
+
+Post-processing effects:
+
+Bloom effect for hot surfaces and flames
+SSAO (Screen Space Ambient Occlusion) for depth
+Color grading for appetizing food appearance
+Depth of field for camera focus effects
+
+
+
+Camera System:
+
+Orbital camera controls for exploring 3D kitchen
+Smooth camera transitions between cooking stations
+Multiple camera presets:
+
+Wide shot: Full kitchen view
+Close-up: Detailed ingredient/cooking action view
+First-person: Immersive chef perspective
+Cinematic: Recipe completion celebrations
+
+
+Camera shake effects for chopping, mixing actions
+Smooth interpolation between views (no jarring cuts)
+
+3D Kitchen Environment:
+
+Fully modeled 3D kitchen with:
+
+Countertops with realistic marble/granite textures
+Stove with 4 burners (animated flames)
+Oven with opening door animation
+Refrigerator (opens to show ingredient storage)
+Sink with running water particle system
+Cabinets and drawers (interactive, can open/close)
+Kitchen island for food preparation
+Hanging utensils and decorative elements
+
+
+PBR (Physically Based Rendering) materials:
+
+Metallic surfaces (pots, pans, utensils)
+Glossy surfaces (countertops, appliances)
+Matte surfaces (wooden cutting boards)
+Subsurface scattering for translucent items (vegetables)
+
+
+Dynamic shadows that respond to light sources
+Progressive environment unlocks (start basic, upgrade kitchen as you level up)
+
+
+2. 3D INGREDIENT & FOOD MODELING
+Advanced Food Representation
+Ingredient Models:
+
+High-quality 3D models for 100+ ingredients:
+
+Vegetables: Tomatoes, onions, carrots, broccoli, peppers, mushrooms, garlic, lettuce, cucumber
+Proteins: Chicken breast/thighs, beef steaks, fish fillets, eggs, tofu blocks, shrimp
+Grains: Rice grains (particle system), pasta shapes, bread loaves, flour (powder simulation)
+Dairy: Milk bottles, cheese blocks/slices, butter sticks, yogurt containers
+Liquids: Oil bottles, sauces, water (fluid simulation)
+Spices: Jars and bottles with label textures
+
+
+
+Dynamic Food States:
+
+Implement transformation system showing cooking stages:
+
+Raw → Cooking → Cooked → Burnt (different textures and colors)
+Vegetables: bright colors → softening → browning → charred
+Meat: red/pink → browning → well-done → burnt
+Bread: dough → rising → golden → burnt
+
+
+Real-time texture updates based on heat and time
+Shader effects for:
+
+Glistening oil on surfaces
+Steam rising from hot food (particle system)
+Bubbling liquids (animated normal maps)
+Sizzling effects (particles + sound)
+Caramelization (color shifts)
+
+
+
+Physics-Based Interactions:
+
+Realistic physics using simplified rigid body simulation:
+
+Ingredients fall naturally into bowls
+Chopped pieces scatter realistically
+Liquids pour with proper flow
+Stirring creates swirling motion
+Stacking ingredients (layer system)
+
+
+Collision detection for ingredient interactions
+Gravity affects all objects appropriately
+Soft body physics for dough, batter (simplified simulation)
+
+
+3. IMMERSIVE 3D MINI-GAMES
+Advanced Interactive Cooking Actions
+1. 3D Chopping System:
+
+3D knife model with realistic motion
+Ingredient placed on 3D cutting board
+Mechanics:
+
+Mouse/touch controls knife position and angle
+Swipe down to chop (force affects cut quality)
+Visual slice plane shows where cut will occur
+Ingredients separate into pieces with physics
+Perfect cuts award bonus points
+
+
+Particle effects: flying vegetable pieces, juice splatter
+Sound design: sharp knife sounds, board impact, vegetable crunch
+Difficulty variations: soft vegetables (easy) vs. hard vegetables/meat (harder)
+Visual feedback: cut quality indicator (clean vs. jagged)
+
+2. 3D Stirring & Mixing:
+
+3D bowl/pot with visible contents
+Spoon/whisk model that follows cursor/finger
+Mechanics:
+
+Circular motion tracking (path visualization)
+Ingredients visibly blend and change color
+Fluid simulation for liquids swirling
+Speed matters: too fast = splashing, too slow = lumps
+Consistency meter shows mixing progress
+
+
+Shader effects for mixing: color blending, texture changes
+Particle system for flour clouds, splashing
+Different tools for different tasks (whisk, spoon, spatula)
+
+3. 3D Heat & Temperature Control:
+
+3D stove with realistic burner controls (knobs that rotate)
+Visible flame intensity (particle system)
+Pan/pot model on burner with:
+
+Heat visualization (red glow on bottom)
+Food color changes based on temperature
+Smoke particles when too hot
+Steam when appropriate temperature
+
+
+Temperature gauge (analog or digital)
+Audio cues: sizzling intensity changes with heat
+Time-temperature relationship affects outcome
+Risk of burning if not monitored
+
+4. 3D Measuring & Pouring:
+
+3D measuring cups/spoons
+Ingredient containers that tilt and pour
+Mechanics:
+
+Control pour speed and angle
+Liquid flows with particle system or mesh deformation
+Filling visualization (liquid level rises)
+Precision meter (overfill = penalty)
+Dry ingredients have different physics than liquids
+
+
+Visual feedback: color-coded accuracy zones
+Slow-motion effect for precise pours
+
+5. 3D Plating & Presentation:
+
+3D plate as canvas
+Drag and arrange cooked food items
+Mechanics:
+
+Position, rotate, and stack food elements
+Garnish placement (herbs, sauces)
+Artistic presentation scoring
+Reference image for guided plating
+Photo mode for final dish
+
+
+Lighting adjustments for food photography
+Blur background to focus on dish
+Share-worthy final presentation
+
+6. 3D Kneading & Shaping (Advanced):
+
+Deformable 3D dough mesh
+Hand models for pressing and folding
+Vertex manipulation for realistic dough interaction
+Elasticity simulation showing dough spring-back
+Color and texture changes as dough develops
+
+
+4. ADVANCED RECIPE SYSTEM (3D ENHANCED)
+Comprehensive Recipe Database
+Recipe Categories (50+ Recipes Total):
+Breakfast (8 recipes):
+
+Scrambled Eggs, Pancakes, French Toast, Omelette, Avocado Toast, Smoothie Bowl, Breakfast Burrito, Shakshuka
+
+Lunch (12 recipes):
+
+Caesar Salad, Club Sandwich, Chicken Stir-Fry, Pasta Carbonara, Tacos, Sushi Rolls, Greek Salad, Ramen Bowl, Grilled Cheese, Chicken Wrap, Poke Bowl, Quinoa Bowl
+
+Dinner (15 recipes):
+
+Beef Steak, Grilled Salmon, Chicken Parmesan, Pad Thai, Beef Stroganoff, Lasagna, Lamb Chops, Paella, Butter Chicken, Fajitas, Risotto, Fish & Chips, Moroccan Tagine, Korean BBQ, Teriyaki Chicken
+
+Desserts (10 recipes):
+
+Chocolate Cake, Tiramisu, Crème Brûlée, Apple Pie, Brownies, Cheesecake, Macarons, Chocolate Mousse, Fruit Tart, Panna Cotta
+
+Snacks & Sides (8 recipes):
+
+Spring Rolls, Bruschetta, Hummus, Guacamole, Garlic Bread, Roasted Vegetables, French Fries, Mozzarella Sticks
+
+Recipe Data Structure (Enhanced):
+javascript{
+  id: "recipe_045",
+  name: "Beef Stir-Fry with Vegetables",
+  cuisine: "Asian",
+  difficulty: "Medium",
+  
+  timing: {
+    prepTime: 15,
+    cookTime: 12,
+    totalTime: 27
+  },
+  
+  servings: 4,
+  
+  nutrition: {
+    perServing: {
+      calories: 385,
+      protein: 32,
+      carbs: 28,
+      fat: 16,
+      fiber: 4,
+      sodium: 680,
+      sugar: 8
+    },
+    vitamins: {
+      vitaminA: 45, // % daily value
+      vitaminC: 120,
+      iron: 25,
+      calcium: 8
+    }
+  },
+  
+  healthTags: ["high-protein", "low-carb", "gluten-free-option"],
+  dietaryInfo: ["dairy-free", "nut-free"],
+  allergens: ["soy", "shellfish-sauce"],
+  
+  ingredients: [
+    {
+      id: "beef_sirloin",
+      name: "Beef Sirloin",
+      amount: 500,
+      unit: "g",
+      category: "protein",
+      model3D: "models/beef_raw.glb",
+      preparation: "sliced thin",
+      cost: 25,
+      unlockLevel: 5
+    },
+    {
+      id: "bell_pepper_red",
+      name: "Red Bell Pepper",
+      amount: 2,
+      unit: "whole",
+      category: "vegetable",
+      model3D: "models/bell_pepper_red.glb",
+      preparation: "julienned",
+      cost: 5,
+      unlockLevel: 1
+    },
+    // ... more ingredients
+  ],
+  
+  steps: [
+    {
+      stepNumber: 1,
+      action: "prep",
+      title: "Prepare the Beef",
+      instruction: "Slice beef sirloin against the grain into thin strips, about 1/4 inch thick",
+      miniGame: {
+        type: "chopping",
+        target: "beef_sirloin",
+        difficulty: "medium",
+        timeLimit: 60,
+        perfectCuts: 15,
+        technique: "against_grain"
+      },
+      cameraAngle: "closeup_cutting_board",
+      tools: ["chef_knife", "cutting_board"],
+      duration: 180,
+      tips: "Partially freeze beef for 15 minutes for easier slicing",
+      model3DState: {
+        ingredient: "beef_sirloin",
+        transformation: "whole → sliced"
+      }
+    },
+    {
+      stepNumber: 2,
+      action: "prep",
+      title: "Prepare Vegetables",
+      instruction: "Cut bell peppers into thin strips and slice onions",
+      miniGame: {
+        type: "chopping",
+        target: ["bell_pepper_red", "onion"],
+        difficulty: "easy",
+        timeLimit: 90,
+        perfectCuts: 20
+      },
+      cameraAngle: "overhead_cutting_board",
+      tools: ["chef_knife", "cutting_board"],
+      duration: 240
+    },
+    {
+      stepNumber: 3,
+      action: "marinate",
+      title: "Marinate the Beef",
+      instruction: "Mix soy sauce, cornstarch, and sesame oil. Coat beef strips evenly",
+      miniGame: {
+        type: "mixing",
+        containers: ["bowl_medium"],
+        ingredients: ["soy_sauce", "cornstarch", "sesame_oil", "beef_sliced"],
+        stirDuration: 30,
+        consistency: "well_coated"
+      },
+      cameraAngle: "closeup_bowl",
+      tools: ["mixing_bowl", "spoon"],
+      duration: 120,
+      visualEffect: "coating_animation"
+    },
+    {
+      stepNumber: 4,
+      action: "heat",
+      title: "Heat the Wok",
+      instruction: "Heat wok over high heat until smoking. Add vegetable oil",
+      miniGame: {
+        type: "temperature",
+        equipment: "wok",
+        targetTemp: 200,
+        targetTime: 45,
+        heatSource: "gas_burner"
+      },
+      cameraAngle: "side_view_stove",
+      tools: ["wok", "spatula"],
+      visualEffects: ["heat_shimmer", "smoke_rising"],
+      audioEffects: ["sizzle_increasing"],
+      duration: 90
+    },
+    {
+      stepNumber: 5,
+      action: "cook",
+      title: "Sear the Beef",
+      instruction: "Add beef in single layer. Sear for 2 minutes without stirring, then flip",
+      miniGame: {
+        type: "cooking_timing",
+        equipment: "wok",
+        temperature: "high",
+        duration: 120,
+        flipTiming: [60],
+        stirring: false,
+        doneness: "medium_rare"
+      },
+      cameraAngle: "closeup_wok",
+      tools: ["wok", "tongs"],
+      visualEffects: ["maillard_browning", "steam_burst", "sizzle_particles"],
+      audioEffects: ["intense_sizzle", "meat_searing"],
+      criticalTiming: true,
+      duration: 120
+    },
+    {
+      stepNumber: 6,
+      action: "cook",
+      title: "Stir-Fry Vegetables",
+      instruction: "Add vegetables and stir-fry for 3-4 minutes until tender-crisp",
+      miniGame: {
+        type: "stirring",
+        equipment: "wok",
+        stirSpeed: "fast",
+        duration: 180,
+        tossing: true,
+        consistency: "tender_crisp"
+      },
+      cameraAngle: "dynamic_wok_toss",
+      tools: ["wok", "spatula"],
+      visualEffects: ["vegetable_color_change", "steam", "tossing_animation"],
+      duration: 210
+    },
+    {
+      stepNumber: 7,
+      action: "combine",
+      title: "Combine and Sauce",
+      instruction: "Return beef to wok. Add sauce mixture. Toss to coat everything evenly",
+      miniGame: {
+        type: "mixing",
+        equipment: "wok",
+        technique: "tossing",
+        coverage: 100,
+        duration: 60
+      },
+      cameraAngle: "overhead_wok",
+      tools: ["wok", "spatula"],
+      visualEffects: ["sauce_coating", "gloss_increase"],
+      duration: 90
+    },
+    {
+      stepNumber: 8,
+      action: "plate",
+      title: "Plate and Garnish",
+      instruction: "Arrange stir-fry on plate. Garnish with sesame seeds and green onions",
+      miniGame: {
+        type: "plating",
+        plateType: "large_round",
+        arrangementStyle: "mound_center",
+        garnishes: ["sesame_seeds", "green_onions"],
+        aestheticScore: true
+      },
+      cameraAngle: "overhead_plate",
+      tools: ["serving_plate", "tongs"],
+      visualEffects: ["garnish_sprinkle"],
+      duration: 60
+    }
+  ],
+  
+  unlockRequirements: {
+    level: 8,
+    coins: 150,
+    prerequisiteRecipes: ["chicken_stirfry", "vegetable_stirfry"]
+  },
+  
+  rewards: {
+    xp: 120,
+    coins: 80,
+    achievements: ["wok_master", "beef_expert"]
+  },
+  
+  variations: [
+    {
+      name: "Spicy Version",
+      additionalIngredients: ["chili_peppers", "chili_oil"],
+      modifiedSteps: [7]
+    },
+    {
+      name: "Low-Sodium",
+      substitutions: [
+        {original: "soy_sauce", replacement: "low_sodium_soy_sauce"}
+      ]
+    }
+  ],
+  
+  culturalInfo: "Chinese stir-frying technique that requires high heat and quick cooking to retain vegetable crispness while developing complex flavors through the Maillard reaction.",
+  
+  tips: [
+    "Keep all ingredients prepped before starting - stir-frying is very fast",
+    "Don't overcrowd the wok or meat will steam instead of sear",
+    "Use high smoke-point oil like vegetable or peanut oil"
+  ]
+}
+
+5. ADVANCED INGREDIENT INVENTORY SYSTEM
+3D Pantry & Refrigerator
+Visual Inventory Management:
+
+3D refrigerator that opens with smooth animation
+Shelves containing 3D ingredient models
+Click/tap ingredients to view details:
+
+3D model rotates for inspection
+Nutritional information overlay
+Quantity remaining
+Freshness indicator (color-coded)
+Expiration tracking (ingredients spoil over time)
+
+
+Pantry cabinet for dry goods
+Spice rack for seasonings
+Separate sections: proteins, vegetables, dairy, grains, condiments
+
+Shopping & Acquisition:
+
+3D market/store interface
+Browse aisles with 3D product displays
+Shopping cart system (drag items from shelves)
+Currency: Coins earned from completing recipes
+Pricing tiers:
+
+Common ingredients: 5-10 coins
+Uncommon: 15-30 coins
+Rare/specialty: 40-100 coins
+Premium: 150+ coins
+
+
+Daily deals and discounts
+Bulk buying options (save money)
+Ingredient quality levels (affects recipe outcomes):
+
+Basic → Good → Premium → Organic
+
+
+
+Ingredient Progression System:
+
+Start with 15 basic ingredients unlocked
+Unlock new ingredients through:
+
+Level milestones (every 2-3 levels)
+Recipe completions
+Achievements
+Special challenges
+In-game events
+
+
+Ingredient encyclopedia:
+
+3D models
+Origin information
+Nutritional facts
+Culinary uses
+Fun facts
+
+
+
+
+6. PROGRESSION & GAMIFICATION (Enhanced)
+Comprehensive Leveling System
+Experience & Levels:
+
+Start as "Kitchen Novice" (Level 1)
+50 total levels with progression titles:
+
+Levels 1-5: Kitchen Novice
+Levels 6-10: Home Cook
+Levels 11-15: Apprentice Chef
+Levels 16-20: Line Cook
+Levels 21-25: Sous Chef
+Levels 26-30: Head Chef
+Levels 31-35: Executive Chef
+Levels 36-40: Master Chef
+Levels 41-45: Culinary Artist
+Levels 46-50: Legendary Chef
+
+
+
+XP Sources:
+
+Recipe completion: 50-200 XP (based on difficulty)
+Star ratings: Bonus XP per star (25/50/100)
+First-time recipe: 50% bonus XP
+Perfect mini-game: +20 XP each
+Daily challenges: 75-150 XP
+Achievements: 100-500 XP
+Streak bonuses: +10% XP per day (max 50%)
+
+Star Rating System (Per Recipe):
+
+⭐ 1 Star: Recipe completed (60%+ score)
+⭐⭐ 2 Stars: Good performance (75%+ score)
+⭐⭐⭐ 3 Stars: Perfect execution (90%+ score)
+
+Score Components:
+
+Mini-game performance: 40%
+Time efficiency: 20%
+Technique accuracy: 20%
+Presentation quality: 10%
+Ingredient quality: 10%
+
+Achievement System (100+ Achievements)
+Categories:
+Cooking Milestones:
+
+"First Dish" - Complete first recipe
+"Century Club" - Cook 100 recipes
+"Master of All" - 3-star every recipe
+"Speed Demon" - Complete 10 recipes under time
+"Perfectionist" - Get 3 stars on 50 recipes
+
+Technique Achievements:
+
+"Knife Skills Master" - Perfect 100 chops
+"Sauté Expert" - Master heat control in 25 recipes
+"Mixing Maestro" - Perfect consistency 50 times
+"Plating Artist" - Score 95%+ on plating 20 times
+
+Ingredient Achievements:
+
+"Vegetarian Journey" - Complete 20 vegetarian recipes
+"Carnivore" - Cook with all meat types
+"Pescatarian" - Master 15 fish recipes
+"Spice Master" - Use all 50 spices
+"Organic Enthusiast" - Use organic ingredients 100 times
+
+Health & Nutrition:
+
+"Healthy Habits" - Cook 30 balanced meals
+"Low-Carb Legend" - Complete 20 low-carb recipes
+"Protein Power" - Make 25 high-protein dishes
+"Vitamin Seeker" - Cook meals with all vitamins
+"Calorie Conscious" - Track nutrition 30 days
+
+Collection Achievements:
+
+"Recipe Collector" - Unlock 25 recipes
+"Ingredient Hoarder" - Own 75 ingredients
+"Kitchen Upgrade" - Fully upgrade kitchen
+"Tool Master" - Unlock all kitchen tools
+
+Special Achievements:
+
+"Early Bird" - Cook breakfast recipe before 9 AM (real time)
+"Night Owl" - Cook dinner recipe after 8 PM
+"Weekend Chef" - Cook 5 recipes on weekend
+"Streak Master" - Maintain 30-day cooking streak
+"Social Chef" - Share 50 dishes
+"Mentor" - Help beginners through tutorial mode
+
+Daily Challenges & Events
+Daily Challenges (Rotate Daily):
+
+"Speed Challenge": Complete specific recipe under par time
+"Ingredient Challenge": Use specific ingredient in any recipe
+"Technique Challenge": Perfect a specific mini-game 5 times
+"Cuisine Challenge": Cook a recipe from specific cuisine
+"Healthy Challenge": Cook a balanced meal meeting nutritional targets
+
+Weekly Events:
+
+"Master Chef Competition": Leaderboard for most points
+"Recipe Rush": Cook as many recipes as possible
+"Perfect Week": Get 3 stars on 7 different recipes
+"Ingredient Spotlight": Featured ingredient with bonus rewards
+
+Seasonal Events:
+
+Holiday-themed recipes and decorations
+Limited-time ingredients
+Special achievement badges
+Exclusive kitchen customizations
+
+Currency System
+Coins (Primary Currency):
+
+Earned from: recipe completion, achievements, daily login, challenges
+Used for: buying ingredients, unlocking recipes, kitchen upgrades
+
+Premium Currency (Optional - Gems):
+
+Rare drops from perfect recipes
+Speed up unlocks
+Purchase premium ingredients
+Unlock exclusive customization options
+
+
+7. HEALTH & NUTRITION FEATURES (Advanced)
+Comprehensive Nutrition Tracking
+Meal Planning Dashboard (3D Interface):
+
+Weekly calendar with 3D meal cards
+Drag-and-drop recipe assignment
+Nutritional breakdown per day/week
+Visual charts using Recharts:
+
+Macro distribution (pie chart)
+Daily calorie intake (line chart)
+Nutrient balance (radar chart)
+Meal timing distribution
+
+
+
+Personal Health Goals:
+
+Set custom goals:
+
+Daily calorie target (1200-3500 range)
+Macro ratios (protein/carbs/fat percentages)
+Specific nutrients (vitamin C, iron, calcium)
+Dietary restrictions enforcement
+
+
+Progress tracking with visual indicators
+Goal achievement rewards (bonus XP/coins)
+
+Nutritional Education:
+
+Pop-up tips during cooking:
+
+"Broccoli is rich in vitamin C and fiber!"
+"Olive oil contains heart-healthy fats"
+"Lean proteins support muscle health"
+
+
+Ingredient spotlight: weekly feature on nutritional benefits
+Recipe comparisons: see healthier alternatives
+Nutrition quiz mini-games for bonus rewards
+
+Dietary Filters & Preferences:
+
+Vegetarian, Vegan, Pescatarian
+Gluten-free, Dairy-free, Nut-free
+Keto, Paleo, Mediterranean, Low-carb
+Halal, Kosher
+Low-sodium, Low-sugar, Low-fat
+High-protein, High-fiber
+Filter recipe list by multiple criteria
+Ingredient substitution suggestions
+
+Meal Balance Analyzer:
+
+Visual "balance plate" showing food groups
+Real-time feedback during meal planning
+Recommendations for improving balance
+Color-coded indicators:
+
+Green: Well-balanced
+Yellow: Could be improved
+Red: Imbalanced
+
+
+
+
+8. BEAUTIFUL UI/UX DESIGN (3D-Enhanced)
+Visual Design System
+Color Palette (Warm & Appetizing):
+
+Primary: #FF6B35 (Vibrant Orange)
+Secondary: #F7931E (Golden Yellow)
+Accent: #C1666B (Muted Red)
+Success: #4ECDC4 (Teal)
+Background: #FFF8F0 (Warm Cream)
+Dark: #2C3531 (Charcoal)
+Wood tones: #8B4513, #DEB887
+
+Typography:
+
+Headings: "Poppins" - Bold, modern, friendly
+Body: "Inter" - Clean, highly readable
+Accent/Food names: "Playfair Display" - Elegant, appetizing
+
+3D UI Elements:
+
+Floating recipe cards with 3D food models
+Animated ingredient icons that rotate on hover
+3D buttons with depth and shadow
+Parallax scrolling effects
+Glassmorphism for overlay panels
+Neumorphism for control elements
+
+Animation Guidelines
+Micro-Interactions:
+
+Button hover: Lift effect + shadow increase (150ms)
+Card hover: Gentle float + glow (200ms)
+Ingredient click: Bounce + sparkle particles
+Recipe unlock: Confetti burst + card flip animation
+Achievement earned: Badge slide-in + golden flash
+Level up: Screen flash + fireworks
+Star earned: Pop-in with bounce (each star sequentially)
+
+Transitions:
+
+Page transitions: Smooth fade + slide (300ms)
+Modal open/close: Scale + fade (250ms)
+Kitchen station switch: Camera pan (800ms ease-in-out)
+Cooking step progression: Dissolve + wipe (400ms)
+
+Loading States:
+
+3D spinning whisk/spoon for loading
+Progress bar styled as filling measuring cup
+Skeleton screens for recipe loading
+Smooth content fade-in when loaded
+
+Particle Effects:
+
+Steam rising from hot food
+Sparkles on perfect actions
+Food particles when chopping
+Splashes when pouring liquids
+Smoke from burnt food
+Confetti for celebrations
+Flour clouds when mixing dough
+
+Responsive Design
+Desktop (1920x1080+):
+
+Full 3D kitchen visible
+Side panel for recipe steps
+Large cooking area in center
+Detailed 3D models and effects
+
+Tablet (768-1024px):
+
+Optimized 3D view
+Collapsible side panels
+Touch-friendly controls
+Simplified particle effects
+
+Mobile (320-767px):
+
+Simplified 3D or high-quality 2D fallback
+Full-screen cooking view
+Bottom sheet for recipe steps
+Swipe gestures for navigation
+Optimized performance
+
+Sound Design
+Ambient Kitchen Sounds:
+
+Subtle background: fridge hum, clock ticking
+Contextual: running water, oven heat, gas burner
+
+Action Sounds:
+
+Chopping: Knife on board (various pitches)
+Sizzling: Dynamic intensity based on heat
+Stirring: Spoon on bowl/pot
+Pouring: Liquid flow (different viscosities)
+Timer: Gentle ding
+Success: Cheerful chime
+Failure: Gentle buzz (not harsh)
+Unlock: Magic sparkle sound
+
+Music (Optional Toggle):
+
+Upbeat, relaxing background music
+Cooking-themed tracks
+Volume control
+Mute option
+
+
+9. TECHNICAL IMPLEMENTATION DETAILS
+Frontend Architecture
+javascript// Technology Stack
+- React 18+ with Hooks
+- Three.js (r128) for 3D graphics
+- React Three Fiber (Three.js React wrapper)
+- @react-three/drei for helpers
+- @react-three/postprocessing for effects
+- Tailwind CSS for UI styling
+- Lucide React for icons
+- Recharts for nutrition charts
+- Framer Motion for 2D animations
+- Tone.js for audio management
+```
+
+### Component Structure
+```
+src/
+├── components/
+│   ├── 3D/
+│   │   ├── Kitchen/
+│   │   │   ├── KitchenScene.jsx
+│   │   │   ├── Stove.jsx
+│   │   │   ├── Countertop.jsx
+│   │   │   ├── Refrigerator.jsx
+│   │   │   └── Lighting.jsx
+│   │   ├── Ingredients/
+│   │   │   ├── IngredientModel.jsx
+│   │   │   ├── VegetableModels.jsx
+│   │   │   ├── MeatModels.jsx
+│   │   │   └── DairyModels.jsx
+│   │   ├── Tools/
+│   │   │   ├── Knife.jsx
+│   │   │   ├── Spatula.jsx
+│   │   │   ├── Bowl.jsx
+│   │   │   └── Pan.jsx
+│   │   └── Effects/
+│   │       ├── Steam.jsx
+│   │       ├── Fire.jsx
+│   │       ├── Smoke.jsx
+│   │       └── Particles.jsx
+│   ├── MiniGames/
+│   │   ├── ChoppingGame.jsx
+│   │   ├── StirringGame.jsx
+│   │   ├── HeatingGame.jsx
+│   │   ├── PouringGame.jsx
+│   │   └── PlatingGame.jsx
+│   ├── UI/
+│   │   ├── RecipeCard.jsx
+│   │   ├── IngredientInventory.jsx
+│   │   ├── ProgressBar.jsx
+│   │   ├── AchievementBadge.jsx
+│   │   ├── NutritionChart.jsx
+│   │   └── LevelDisplay.jsx
+│   ├── Screens/
+│   │   ├── HomeScreen.jsx
+│   │   ├── RecipeBook.jsx
+│   │   ├── CookingScreen.jsx
+│   │   ├── MarketScreen.jsx
+│   │   ├── ProfileScreen.jsx
+│   │   └── MealPlanner.jsx
+│   └── Layout/
+│       ├── Header.jsx
+│       ├── Navigation.jsx
+│       └── Modal.jsx
+├── hooks/
+│   ├── useGameState.js
+│   ├── useRecipeProgress.js
+│   ├── useInventory.js
+│   ├── use3DControls.js
+│   └── useAchievements.js
+├── utils/
+│   ├── recipeData.js
+│   ├── ingredientData.js
+│   ├── achievementData.js
+│   ├── nutritionCalculator.js
+│   ├── scoreCalculator.js
+│   └── storage.js
+├── assets/
+│   ├── models/ (3D models - .glb format)
+│   ├── textures/
+│   ├── sounds/
+│   └── images/
+└── App.jsxContinue13:28State Management Strategy
+javascript// Main game state structure
+const gameState = {
+  player: {
+    id: "player_001",
+    username: "ChefMaster",
+    level: 15,
+    xp: 3450,
+    xpToNextLevel: 4000,
+    title: "Apprentice Chef",
+    coins: 850,
+    gems: 12,
+    streak: 7,
+    lastPlayed: "2024-12-11"
+  },
+  
+  inventory: {
+    ingredients: [
+      {id: "tomato", quantity: 10, quality: "premium", expiryDays: 5},
+      {id: "chicken_breast", quantity: 3, quality: "good", expiryDays: 2}
+      // ...
+    ],
+    tools: ["chef_knife", "whisk", "spatula", "cutting_board"]
+  },
+  
+  recipes: {
+    unlocked: ["recipe_001", "recipe_002", "recipe_045"],
+    completed: {
+      "recipe_001": {
+        completions: 5,
+        bestStars: 3,
+        bestTime: 240,
+        lastCooked: "2024-12-10"
+      }
+    }
+  },
+  
+  achievements: {
+    earned: ["first_dish", "knife_master", "healthy_eater"],
+    progress: {
+      "century_club": {current: 47, target: 100}
+    }
+  },
+  
+  mealPlan: {
+    "2024-12-11": {
+      breakfast: "recipe_003",
+      lunch: "recipe_015",
+      dinner: "recipe_045"
+    }
+  },
+  
+  settings: {
+    soundEnabled: true,
+    musicEnabled: true,
+    soundVolume: 0.7,
+    musicVolume: 0.5,
+    graphics: "high", // low, medium, high
+    showTutorials: true,
+    language: "en"
+  },
+  
+  statistics: {
+    totalRecipesCooked: 47,
+    totalCookingTime: 8420, // seconds
+    favoriteRecipe: "recipe_045",
+    perfectMiniGames: 156,
+    threeStarRecipes: 12
+  }
+};
+Storage Implementation (Using window.storage API)
+javascript// Storage utilities
+const StorageKeys = {
+  PLAYER: 'player-profile',
+  INVENTORY: 'ingredient-inventory',
+  RECIPES: 'recipe-progress',
+  ACHIEVEMENTS: 'achievements-data',
+  MEAL_PLAN: 'meal-planner',
+  SETTINGS: 'game-settings',
+  STATISTICS: 'player-statistics'
+};
+
+// Save player data
+async function savePlayerData(playerData) {
+  try {
+    await window.storage.set(StorageKeys.PLAYER, JSON.stringify(playerData));
+  } catch (error) {
+    console.error('Failed to save player data:', error);
+  }
+}
+
+// Load player data
+async function loadPlayerData() {
+  try {
+    const result = await window.storage.get(StorageKeys.PLAYER);
+    return result ? JSON.parse(result.value) : null;
+  } catch (error) {
+    console.error('Player data not found:', error);
+    return null; // Return default data
+  }
+}
+
+// Auto-save every 30 seconds during gameplay
+useEffect(() => {
+  const autoSaveInterval = setInterval(() => {
+    saveAllGameData(gameState);
+  }, 30000);
+  
+  return () => clearInterval(autoSaveInterval);
+}, [gameState]);
+
+// Save on page unload
+window.addEventListener('beforeunload', () => {
+  saveAllGameData(gameState);
+});
+3D Performance Optimization
+javascript// LOD (Level of Detail) system
+- Close-up view: High-poly models (2000-5000 triangles)
+- Medium view: Mid-poly models (500-1500 triangles)
+- Far view: Low-poly models (100-300 triangles)
+
+// Texture optimization
+- Use compressed textures (.ktx2 format)
+- Mipmapping for distant objects
+- Texture atlases to reduce draw calls
+- Maximum texture size: 2048x2048
+
+// Rendering optimization
+- Frustum culling (only render visible objects)
+- Occlusion culling (don't render hidden objects)
+- Instanced rendering for repeated objects
+- Object pooling for particles
+- Limit active particle systems (max 5 concurrent)
+
+// Frame rate targeting
+- Desktop: 60 FPS
+- Mobile: 30 FPS
+- Adaptive quality: reduce effects if FPS drops
+
+// Memory management
+- Dispose geometries and materials when unused
+- Unload unused 3D models
+- Limit simultaneous loaded recipes (max 3)
+Mini-Game Implementation Example
+javascript// Chopping Game Component
+function ChoppingGame({ ingredient, onComplete }) {
+  const [cuts, setCuts] = useState(0);
+  const [accuracy, setAccuracy] = useState(100);
+  const targetCuts = 12;
+  
+  const handleChop = (position) => {
+    // Calculate cut accuracy based on position
+    const accuracyScore = calculateCutAccuracy(position);
+    
+    // Update 3D visual - slice ingredient
+    sliceIngredient3D(ingredient, position);
+    
+    // Play sound effect
+    playSound('chop', {pitch: 1 + (cuts * 0.1)});
+    
+    // Particle effect
+    createChopParticles(position);
+    
+    setCuts(prev => prev + 1);
+    setAccuracy(prev => (prev + accuracyScore) / 2);
+    
+    if (cuts + 1 >= targetCuts) {
+      const finalScore = calculateScore(cuts, accuracy, timeElapsed);
+      onComplete({score: finalScore, stars: getStars(finalScore)});
+    }
+  };
+  
+  return (
+    <Canvas>
+      <CuttingBoard3D />
+      <Ingredient3D model={ingredient} cuts={cuts} />
+      <Knife3D onChop={handleChop} />
+      <ChopGuideOverlay />
+    </Canvas>
+  );
+}
+
+10. ADVANCED FEATURES & POLISH
+Tutorial System
+
+Interactive first-time tutorial
+Step-by-step guidance with visual highlights
+Skip option for experienced users
+Contextual help tooltips throughout game
+Video tutorials for complex techniques
+Practice mode for mini-games
+
+Social Features
+
+Recipe sharing (generate shareable links)
+Photo mode for plated dishes
+
+Filters and effects
+Social media export
+In-game gallery
+
+
+Leaderboards:
+
+Most recipes cooked
+Highest level
+Most 3-stars
+Weekly challenges
+
+
+Friend system (future expansion)
+
+Accessibility Features
+
+Colorblind modes (protanopia, deuteranopia, tritanopia)
+High contrast mode
+Font size adjustment
+Reduced motion option
+Screen reader support
+Keyboard navigation
+Subtitles for audio cues
+Adjustable difficulty settings
+
+Customization Options
+
+Kitchen themes:
+
+Modern minimalist
+Rustic farmhouse
+Professional restaurant
+Cozy home kitchen
+Futuristic sci-fi
+
+
+Avatar customization (chef appearance)
+Unlockable decorations
+Custom color schemes
+Personalized recipe book covers
+
+Quality of Life Features
+
+Quick cook mode (skip mini-games for repeated recipes)
+Recipe favorites/bookmarks
+Search and filter system
+Sorting options (difficulty, time, cuisine, nutrition)
+Ingredient shopping list export
+Cooking timer reminders
+Save mid-recipe and resume later
+Undo last step option
+Hints system (costs coins)
+
+
+11. CONTENT ROADMAP & EXPANSIONS
+Launch Content (MVP)
+
+15 recipes across 5 categories
+50 ingredients
+5 mini-games
+30 achievements
+25 player levels
+Basic 3D kitchen
+
+Post-Launch Updates
+Month 1-2:
+
+Add 15 more recipes
+Introduce 20 new ingredients
+Add seasonal ingredients
+Weekly challenges implementation
+
+Month 3-4:
+
+New cuisine: Italian expansion (10 recipes)
+New mini-game: Pasta making
+Kitchen upgrade system
+More customization options
+
+Month 5-6:
+
+New cuisine: Japanese expansion (10 recipes)
+Sushi-making mechanics
+Advanced plating techniques
+Recipe creator mode
+
+Future Features
+
+Multiplayer cooking challenges
+Restaurant management mode
+Ingredient farming/garden
+Recipe creation and sharing
+Cooking class mode (educational)
+Celebrity chef collaborations
+Seasonal events and limited recipes
+Mobile app version
+VR mode support
+
+
+12. TECHNICAL REQUIREMENTS & CONSTRAINTS
+Performance Targets
+
+Load time: < 5 seconds initial load
+Frame rate: 60 FPS on desktop, 30 FPS on mobile
+3D model size: < 2MB per model
+Total bundle size: < 10MB (excluding 3D assets)
+3D assets: Progressive loading, max 50MB total
+Memory usage: < 512MB on desktop, < 256MB on mobile
+
+Browser Support
+
+Chrome 90+
+Firefox 88+
+Safari 14+
+Edge 90+
+Mobile browsers (iOS Safari 14+, Chrome Mobile 90+)
+WebGL 2.0 required
+Fallback for WebGL 1.0 (reduced quality)
+
+Security & Privacy
+
+No external API calls (self-contained)
+Local storage only (window.storage API)
+No user authentication required
+No data collection or analytics
+Offline-capable (PWA potential)
+
+Code Quality Standards
+
+TypeScript for type safety (optional but recommended)
+ESLint for code consistency
+Prettier for formatting
+Component documentation
+Unit tests for critical functions
+Performance monitoring hooks
+
+
+13. DELIVERABLES CHECKLIST
+Phase 1: MVP (Core Experience)
+✅ 3D kitchen environment with basic lighting
+✅ 5 fully functional mini-games
+✅ 15 complete recipes with 3D models
+✅ Ingredient inventory system (50 ingredients)
+✅ Player progression (XP, levels, coins)
+✅ Achievement system (30 achievements)
+✅ Recipe unlocking mechanism
+✅ Basic UI with animations
+✅ Sound effects and ambient audio
+✅ Nutrition tracking dashboard
+✅ Meal planner
+✅ Responsive design (desktop + mobile)
+✅ Tutorial system
+✅ Storage persistence (window.storage)
+Phase 2: Polish & Enhancement
+✅ Advanced lighting and post-processing
+✅ Additional 15 recipes (30 total)
+✅ Kitchen customization options
+✅ Daily challenges
+✅ Leaderboards
+✅ Photo mode
+✅ Advanced particle effects
+✅ More animations and transitions
+✅ Accessibility features
+✅ Performance optimization
+Phase 3: Content Expansion
+✅ 50+ recipes
+✅ 100+ ingredients
+✅ 100+ achievements
+✅ Additional mini-games
+✅ New cuisines
+✅ Seasonal content
+✅ Advanced features
+
+14. EXAMPLE CODE STRUCTURE
+Main App Component
+javascriptimport React, { useState, useEffect } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Environment } from '@react-three/drei';
+import KitchenScene from './components/3D/Kitchen/KitchenScene';
+import RecipeBook from './components/Screens/RecipeBook';
+import CookingScreen from './components/Screens/CookingScreen';
+import { loadPlayerData, savePlayerData } from './utils/storage';
+
+function App() {
+  const [gameState, setGameState] = useState('loading'); // loading, home, cookbook, cooking
+  const [playerData, setPlayerData] = useState(null);
+  const [currentRecipe, setCurrentRecipe] = useState(null);
+  
+  useEffect(() => {
+    async function initGame() {
+      const savedData = await loadPlayerData();
+      setPlayerData(savedData || getDefaultPlayerData());
+      setGameState('home');
+    }
+    initGame();
+  }, []);
+  
+  // Auto-save every 30 seconds
+  useEffect(() => {
+    if (playerData) {
+      const interval = setInterval(() => {
+        savePlayerData(playerData);
+      }, 30000);
+      return () => clearInterval(interval);
+    }
+  }, [playerData]);
+  
+  if (gameState === 'loading') {
+    return <LoadingScreen />;
+  }
+  
+  return (
+    <div className="app-container">
+      {gameState === 'home' && (
+        <HomeScreen 
+          playerData={playerData}
+          onStartCooking={() => setGameState('cookbook')}
+        />
+      )}
+      
+      {gameState === 'cookbook' && (
+        <RecipeBook 
+          playerData={playerData}
+          onSelectRecipe={(recipe) => {
+            setCurrentRecipe(recipe);
+            setGameState('cooking');
+          }}
+        />
+      )}
+      
+      {gameState === 'cooking' && (
+        <CookingScreen 
+          recipe={currentRecipe}
+          playerData={playerData}
+          onComplete={(results) => {
+            updatePlayerProgress(results);
+            setGameState('home');
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+export default App;
+3D Kitchen Scene
+javascriptimport React, { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+import Stove from './Stove';
+import Countertop from './Countertop';
+import Refrigerator from './Refrigerator';
+
+function KitchenScene({ activeStation }) {
+  const groupRef = useRef();
+  
+  useFrame((state) => {
+    // Subtle ambient animation
+    if (groupRef.current) {
+      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.1) * 0.02;
+    }
+  });
+  
+  return (
+    <group ref={groupRef}>
+      {/* Lighting */}
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[5, 10, 5]} intensity={0.8} castShadow />
+      <pointLight position={[0, 3, 0]} intensity={0.5} color="#FFF8E7" />
+      
+      {/* Kitchen Elements */}
+      <Countertop position={[0, 0, 0]} />
+      <Stove position={[2, 1, 0]} active={activeStation === 'stove'} />
+      <Refrigerator position={[-3, 0, -2]} />
+      
+      {/* Floor */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
+        <planeGeometry args={[20, 20]} />
+        <meshStandardMaterial color="#E8D5B5" />
+      </mesh>
+      
+      {/* Walls */}
+      <mesh position={[0, 3, -5]}>
+        <planeGeometry args={[20, 6]} />
+        <meshStandardMaterial color="#F5F5DC" />
+      </mesh>
+    </group>
+  );
+}
+
+export default KitchenScene;
+
+15. FINAL DEPLOYMENT INSTRUCTIONS
+Build Configuration
+json{
+  "name": "gamod-cooking-simulator",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/drei": "^9.88.0",
+    "three": "^0.158.0",
+    "recharts": "^2.10.0",
+    "lucide-react": "^0.263.1",
+    "framer-motion": "^10.16.0"
+  }
+}
+Deployment Steps
+
+Build optimized production bundle
+Test on multiple devices and browsers
+Optimize 3D assets (compress, reduce poly count)
+Set up CDN for 3D models and textures
+Configure caching strategy
+Deploy to gamod.cloud hosting
+Set up analytics (optional)
+Monitor performance metrics
+Gather user feedback
+Iterate and improve
+
+
+16. SUCCESS METRICS & KPIs
+User Engagement
+
+Daily Active Users (DAU)
+Average session duration (target: 15+ minutes)
+Recipes cooked per user (target: 5+ per week)
+Return rate (target: 60%+ within 7 days)
+Streak maintenance (target: 40%+ with 7-day streak)
+
+Game Progression
+
+Average player level (track progression curve)
+Recipe completion rate
+3-star achievement rate
+Achievement unlock rate
+Average time to unlock all recipes
+
+Technical Performance
+
+Average load time (target: < 5 seconds)
+Frame rate stability (target: 95%+ at 60 FPS)
+Error rate (target: < 0.1%)
+Mobile performance scores
+
+User Satisfaction
+
+User ratings (target: 4.5+ / 5)
+Feedback sentiment analysis
+Feature request tracking
+Bug report frequency
